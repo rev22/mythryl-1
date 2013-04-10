@@ -1,3 +1,10 @@
+mythryl (1:7.1.0-1ppamb50) unstable; urgency=low
+
+  * src/c/o/Makefile.in, src/c/o/Makefile.intel32-linux: Remove -Werror to
+    allow compilation with different gcc versions.
+
+ -- Michele Bini <michele.bini@gmail.com>  Sun, 21 Apr 2013 18:16:27 +0200
+
 mythryl (1:7.1.0-1ppamb49) unstable; urgency=low
 
   * debian/copyright: Updated copyright and licensing terms.

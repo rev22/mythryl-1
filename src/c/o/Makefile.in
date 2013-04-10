@@ -50,7 +50,7 @@ CLIB_DIR :=		$(RUNTIME_DIR)/lib
 CONFIG_DIR :=		$(RUNTIME_DIR)/config
 
 # CFLAGS =	-O -std=c99 -Wall -Werror
-CFLAGS :=	-g3 -O2 -std=c99 -Wall -Werror
+CFLAGS :=	-g3 -O2 -std=c99 -Wall
     #
     # -g version is useful for generating gdb-able coredumps.
     # Also need to comment out
