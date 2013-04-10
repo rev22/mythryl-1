@@ -843,7 +843,7 @@ herein
 			# The values are memoized fates
 			# representing compiles already fired off.
 
-                   max_compilation_cores = pthread::get_cpu_core_count();
+                   max_compilation_cores = hostthread::get_cpu_core_count();
 
 		    ######################################################################################33
 		    # To process the mutually recursive

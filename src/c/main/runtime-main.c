@@ -373,7 +373,7 @@ static void   process_commandline_options   (
 		CHECK("shebang-line");
 		shebang_line = option_arg;
 
-                if (verbosity > 0) {
+                if (verbosity__global > 0) {
                     printf("             src/c/main/runtime-main.c:   --runtime-shebang-line setting shebang_line to '%s'...\n", shebang_line);
                 }
 
