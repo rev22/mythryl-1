@@ -1,0 +1,40 @@
+dnl This is structured text -*- stx -*-
+dnl Process this file with 'stx2any -T man' to generate a manpage
+w_title(build-an-executable-mythryl-heap-image)dnl
+w_doc_id(baemhiman)dnl
+w_section(1)dnl
+w_author(Michele Bini)dnl
+w_man_desc(Compile Mythryl sources into an executable heap file)
+
+! SYNOPSIS
+
+''build-an-executable-mythryl-heap-image''  /root_group/  /main_function/ [ /heap_file/ ]
+
+! DESCRIPTION
+
+''build-an-executable-mythryl-heap-image'' is used to compile Mythryl
+sources into an executable file.
+
+The resulting executable depends on the mythryl runtime,
+''mythryl-runtime-intel32''.
+
+! OPTIONS
+
+/root_group/::
+	The name of the root file to compile, typically a .lib file.
+
+/main_function/::
+	The name of the entry function of your program, for example ''main::main''.
+
+/heap_file/::
+	The name of the heap file to be created.
+	
+No extra options are currently documented.
+
+! SEE ALSO
+
+''mythryld'' (1), ''mythryl-runtime-intel32'' (1), ''mythryl-ld'' (1)
+
+! AUTHOR
+
+This page was written by w_author.

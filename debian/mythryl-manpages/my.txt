@@ -1,0 +1,42 @@
+dnl This is structured text -*- stx -*-
+dnl Process this file with stx2any
+w_title(my)dnl
+w_doc_id(mymythrylman)dnl
+w_section(1)dnl
+w_author(Michele Bini)dnl
+w_man_desc(Interactive Mythryl session)
+
+
+! SYNOPSIS
+
+''my''
+
+''my'' [ /mythryld options/ ]
+
+
+! DESCRIPTION
+
+''my'' is a shorthand command for ''mythryld'', and can be used to start an
+interactive Mythryl session.
+
+! OPTIONS
+
+Please consult ''mythryld'' (1)
+
+
+! EXAMPLE
+
+''rlwrap my''::
+	Starts mythryld with command line history and editing
+	provided by ''rlwrap'' (1).  ''rlwrap'' is not provided by the
+	mythryl compiler suite but can be installed separately.
+
+
+! SEE ALSO
+
+''mythryld'' (1)
+
+
+! AUTHOR
+
+This page was written by w_author.

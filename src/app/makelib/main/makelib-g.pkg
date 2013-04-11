@@ -324,20 +324,6 @@ herein
 		ltw::drop_thawedlib_tome_from_linker_map;
 
 
-	    stipulate
-		find_files
-		    =	
-		    fcx::find_set_of_compiled_files_for_executable
-			#
-		        (fn filepath = filepath);						# Null filename transform.
-	    herein
-
-		make_bootlist
-		    =
-		    .l   o   find_files;
-	    end;
-
-
 	    # This is the 'dagwalker' function
 	    # for the 'compile' function implementing
 	    #
@@ -1276,6 +1262,8 @@ result;
 			    maybe_clear_pickle_cache ();
 		    };
 		#
+		compiler_compilation_root = ad::get_anchor(ad::dictionary, "ROOT"); # $Root for the compiler at compile time
+		#
 		fun build_executable_heap_image
 			freeze_policy		# fzp::FREEZE_NONE/fzp::FREEZE_ONE/fzp::FREEZE_ALL
 			{ setup,		# Always NULL in practice.
@@ -1290,6 +1278,32 @@ result;
 			timestamp       =   timestamp::last_file_modification_time  heap_filename;
 
 									    # timestamp	is from   src/app/makelib/paths/timestamp.pkg
+
+			stipulate
+			    compilation_root = ad::get_anchor(ad::dictionary, "ROOT");
+			    fun identity x = x;
+			    
+			    # Substitute compiler compilation root anchor with new root anchor, if necessary.
+			    # This works around a problem with resetting the root anchor
+			    filename_transform = case (compiler_compilation_root, compilation_root)
+				 (THE(compiler_compilation_root), THE(compilation_root)) =>
+				 if (compilation_root == compiler_compilation_root)
+				      identity;
+				 else
+				      fn filename = if (string::is_prefix compiler_compilation_root filename)
+					   compilation_root + string::extract(filename, string::length compiler_compilation_root, NULL);
+				      else
+					   filename;
+				      fi;
+				 fi;
+				 _ => identity;
+			    esac;
+			    
+			    find_files = fcx::find_set_of_compiled_files_for_executable filename_transform;
+			herein
+			    make_bootlist    =   .l  o  find_files;
+			end;
+
 
 			library_source_index
 			    =
@@ -1445,6 +1459,18 @@ result;
 						fil::say .{ ""; };
 					    };
 
+				       # Workaround: remove duplicate lines
+				       l = no_dups(l) where
+					   fun loop(x!r, s) => if (string_set::member(s, x))
+						    loop(r, s);
+					       else
+						    x!loop(r, string_set::add(s, x));
+					       fi;
+					       loop([], s) => [];
+					   end;
+					   fun no_dups(l) = loop(l, string_set::empty);
+				       end;					    
+ 
 				       s =   fil::open_for_write  compiled_files_file;
 					#
 				       fun wr str
@@ -2323,6 +2349,8 @@ result;
 
 				args ("--build"                                     ! rest, _) =>  build_an_executable_mythryl_heap_image  rest;
 				args ("--build-an-executable-mythryl-heap-image"    ! rest, _) =>  build_an_executable_mythryl_heap_image  rest;
+
+				args("--set-root-anchor" ! dir ! rest, mk) => { ad::set_anchor(ad::dictionary, "ROOT", THE dir); args_q(rest, mk); };
 
 				args (["--redump",  heapfile], _)
 				    =>

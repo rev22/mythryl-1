@@ -606,7 +606,7 @@ somewhat-clean:	ppless
 	@-rm -f LIBRARY_CONTENTS
 	@-rm -rf glue;
 	@-rm -rf .config config.sh UU;
-	@find . -name '*~' -print | xargs rm -f;
+	@find . -name '*~' -type f -print | xargs rm -f;
 	@find . -type f -name '*.frozen' -print | xargs rm -rf;
 	@find . -type f -name '*.compiled' -print | xargs rm -rf;
 	@find . -type f -name '*.module-dependencies-summary' -print | xargs rm -rf;

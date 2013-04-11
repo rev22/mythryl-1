@@ -1,0 +1,24 @@
+Source: mythryl
+Section: devel
+Priority: extra
+Maintainer: Michele Bini <michele.bini@gmail.com>
+Build-Depends: debhelper (>= 7), libgtk2.0-0, libgtk2.0-dev, libgtk2.0-common, libgtk2.0-bin
+Standards-Version: 3.9.1
+Homepage: http://www.mythryl.org
+
+Package: mythryl
+Architecture: i386
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Provides: mythryl-runtime, mythryl-dev, mythryl-standard-lib
+Suggests: readline-editor, mythryl-mode
+Description: Type-safe, flexible, fast programming language
+ Mythryl is a functional programming language with a safe inferred
+ type system, usable for scripting and application development.
+ .
+ Mythryl was derived from SML/NJ by Cynbe ru Taren, thus inheriting
+ advanced characteristics, such as Hindley-Milner typing, a flexible
+ and safe module system, generics, in-memory compilation to machine
+ code, stackless design.  In addition, Mythryl features a clear syntax
+ influenced by modern programming languages and provides access to
+ POSIX functionality.  Mythryl supports both lightweight and POSIX
+ threads.

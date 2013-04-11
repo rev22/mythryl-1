@@ -16,7 +16,9 @@
 
 #include "shebang-line.h"
 
-Status   heapio__write_image_header   (Writer* wr,  int kind) {
+char *shebang_line = SHEBANG_LINE;
+
+Status   heapio__write_image_header   (Writer* wr,  int kind ) {
     //   ==========================
     // 
     // Write out the  Heapfile_Header.
@@ -31,7 +33,7 @@ Status   heapio__write_image_header   (Writer* wr,  int kind) {
         for (i = SHEBANG_SIZE;  i --> 0; )  header.shebang[i] = 0;
         strcpy(
             header.shebang,
-            SHEBANG_LINE
+            shebang_line
         );
     }
 

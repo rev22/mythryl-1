@@ -1,0 +1,23 @@
+dnl This is structured text -*- stx -*-
+dnl Process this file with stx2any
+w_title(mythryl-gtk-slave)dnl
+w_doc_id(mythrylgtkslaveman)dnl
+w_section(1)dnl
+w_author(Michele Bini)dnl
+w_man_desc(GTK+ server for Mythryl applications)
+
+! SYNOPSIS
+
+''mythryl-gtk-slave''
+
+! DESCRIPTION
+
+''mythryl-gtk-slave'' is used by Mythryl applications to access GTK+ functionality.
+
+! SEE ALSO
+
+''mythryl'' (1), ''mythryld'' (1), ''build-an-executable-mythryl-heap-image'' (1)
+
+! AUTHOR
+
+This page was written by w_author.

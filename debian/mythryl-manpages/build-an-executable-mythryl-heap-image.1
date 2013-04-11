@@ -1,0 +1,35 @@
+.TH "build-an-executable-mythryl-heap-image" "1" "" "Michele Bini"
+.SH NAME
+build-an-executable-mythryl-heap-image \- Compile Mythryl sources into an executable heap file
+.SH SYNOPSIS
+.PP
+\fCbuild-an-executable-mythryl-heap-image\fP  \fIroot_group\fP  \fImain_function\fP [ \fIheap_file\fP ]
+.SH DESCRIPTION
+.PP
+\fCbuild-an-executable-mythryl-heap-image\fP is used to compile Mythryl
+sources into an executable file.
+.PP
+The resulting executable depends on the mythryl runtime,
+\fCmythryl-runtime-intel32\fP.
+.SH OPTIONS
+.RS 3
+.TP
+\&\fIroot_group\fP
+The name of the root file to compile, typically a .lib file.
+.TP
+\&\fImain_function\fP
+The name of the entry function of your program, for example \fCmain::main\fP.
+.TP
+\&\fIheap_file\fP
+The name of the heap file to be created.
+.RE
+.PP
+No extra options are currently documented.
+.SH SEE ALSO
+.PP
+\fCmythryld\fP (1), \fCmythryl-runtime-intel32\fP (1), \fCmythryl-ld\fP (1)
+.SH AUTHOR
+.PP
+This page was written by Michele Bini.
+
+

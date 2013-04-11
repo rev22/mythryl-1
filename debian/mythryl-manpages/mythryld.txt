@@ -1,0 +1,60 @@
+dnl This is structured text -*- stx -*-
+dnl Process this file with stx2any
+w_title(mythryld)dnl
+w_doc_id(mythryldman)dnl
+w_section(1)dnl
+w_author(Michele Bini)dnl
+w_man_desc(Interactive Mythryl session)
+
+! SYNOPSIS
+
+''mythryld''
+
+''mythryld'' [ /runtime system args/ ] [ /options/ ] [ /files/ ]
+
+''mythryld'' -h
+
+! DESCRIPTION
+
+''mythryld'', invoked without any argument, starts an interactive
+Mythryl session.
+
+As the user inputs Mythryl statements, they are immediately compiled,
+evaluated, and have their result pretty-printed back to the user.
+
+This makes it useful to quickly execute code, experiment with the
+language, or the compiler functionality.
+
+''mythryld'' may also be invoked by the shorthand command ''my''.
+
+With options ''-x'', ''-e'' and ''-E'', ''mythryld'' executes
+arbitrary Mythryl expressions.
+
+! OPTIONS
+
+''-E /expression/''::
+	Print result of expression.
+
+''-e /expression/''::
+	Print result of expression and quit.
+
+''-x /expression/''::
+	Print result of expression followed by a newline, then quit.
+
+''-h''::
+	Display more help on the available options.
+
+! EXAMPLE
+
+''rlwrap mythryld''::
+	Starts mythryld with command line history and editing
+	provided by ''rlwrap'' (1).  ''rlwrap'' is not provided by the
+	Mythryl compiler suite but can be installed separately.
+	
+! SEE ALSO
+
+''mythryl'' (1), ''build-an-executable-mythryl-heap-image'' (1)
+
+! AUTHOR
+
+This page was written by w_author.

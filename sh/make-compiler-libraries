@@ -53,7 +53,7 @@ else
     fi
 fi
 
-"$mythryld"  src/lib/core/mythryl-compiler-compiler/mythryl-compiler-compiler-for-this-platform.lib  <<EOF
+"$mythryld" -Ccompiler::compile_in_subprocesses=FALSE src/lib/core/mythryl-compiler-compiler/mythryl-compiler-compiler-for-this-platform.lib  <<EOF
     mythryl_compiler_compiler_for_this_platform::make_mythryl_compiler ();
 EOF
 

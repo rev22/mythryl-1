@@ -843,6 +843,7 @@ herein
 			# The values are memoized fates
 			# representing compiles already fired off.
 
+                   max_compilation_cores = pthread::get_cpu_core_count();
 
 		    ######################################################################################33
 		    # To process the mutually recursive
@@ -2240,8 +2241,9 @@ result =
 									    case (load_compiledfile ())
 										#
 										NULL => 
-										    if (not *coc::compile_in_subprocesses
-										    or  not ok_to_try_compiling_in_subprocess)
+									            if (not *coc::compile_in_subprocesses
+										    or  not ok_to_try_compiling_in_subprocess
+										    or (mtq::get_cores_in_use(makelib_state.makelib_session.makelib_thread_queen) >= max_compilation_cores))
 											#
 											if ok_to_try_compiling_in_subprocess   announce_compile ();	fi;	# Announce only if we have not already done so.
 

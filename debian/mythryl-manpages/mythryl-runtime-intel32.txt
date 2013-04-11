@@ -1,0 +1,30 @@
+dnl This is structured text -*- stx -*-
+dnl Process this file with 'stx2any -T man' to generate a manpage
+w_title(mythryl-runtime-intel32)dnl
+w_doc_id(mythrylruntimeintel32)dnl
+w_section(1)dnl
+w_author(Michele Bini)dnl
+w_man_desc(Runtime for Mythryl heap images)
+
+! SYNOPSIS
+
+''mythryl-runtime-intel32'' --shebang /heap file/
+
+! DESCRIPTION
+
+''mythryl-runtime-intel32'' is a native binary necessary to execute
+mythryl heap images, specifically those created by
+''build-an-executable-mythryl-heap-image''.
+
+! OPTIONS
+
+''--shebang'' /heap file/ ::
+	Execute /heap file/.
+
+! SEE ALSO
+
+''build-an-executable-mythryl-heap-image'' (1)
+
+! AUTHOR
+
+This page was written by w_author.

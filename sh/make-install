@@ -9,11 +9,39 @@ SHELL=/bin/sh
 REAL_PWD=`pwd`
 ROOT=${PWD:-$REAL_PWD}
 SCRIPTS_DIR=$ROOT/sh
-#DESTDIR=${DESTDIR}
 
 BINARIES_TO_LS="$DESTDIR/usr/bin/mythryl-runtime-intel32 $DESTDIR/usr/bin/mythryl-ld $DESTDIR/usr/bin/mythryl $DESTDIR/usr/bin/my $DESTDIR/usr/bin/mythryld  $DESTDIR/usr/bin/build-an-executable-mythryl-heap-image"
+# Alternate system root for installing mythryl.
+# This is used by dpkg and other packaging systems.
+# DESTDIR="${DESTDIR}"
+
+# PREFIX is also used by some unix users and software packaging system, but is currently unsupported.
 
 # Created 2007-03-15 CrT under LGPL.
+
+# Modified by Michele Bini for .deb packaging
+
+# Function to install a script.
+#   This takes care of patching the source
+#   of the script with the SHELL and BIN_DIR
+#   variables to use.
+#
+
+patch_and_install_script() {
+    dsrc=$1
+    ddst=$2
+
+    rm -f "$DESTDIR""/usr/bin"/"$ddst"
+    cat "$SCRIPTS_DIR"/"$dsrc" | \
+    sed -e "s,@SHELL@,$SHELL,g" \
+	-e "s,^root_anchor=.*,root_anchor=/usr/lib/mythryl,g" \
+	-e "s,@BIN_DIR@,/usr/bin,g" \
+	> "$DESTDIR""/usr/bin"/"$ddst"
+    chmod 555 "$DESTDIR""/usr/bin"/"$ddst"
+    if [ ! -x "$DESTDIR""/usr/bin"/"$ddst" ]; then
+	complain "                         sh/make-c-stuff:   Installation of $DESTDIR/usr/bin/${ddst} failed."
+    fi
+}
 
 #
 # Before actually doing anything, make sure
@@ -93,7 +121,7 @@ if [ ! -x "$DESTDIR"/usr/bin/mythryl-runtime-intel32 ]; then
     exit 1
 fi
 
-cp bin/mythryl-ld "$DESTDIR"/usr/bin/mythryl-ld
+patch_and_install_script _mythryl-ld mythryl-ld
 chmod 755         "$DESTDIR"/usr/bin/mythryl-ld
 if [ ! -x "$DESTDIR"/usr/bin/mythryl-ld ]; then
     echo "Couldn't install $DESTDIR/usr/bin/mythryl-ld -- you may need to su to root to install."
@@ -122,35 +150,18 @@ else
     ( cd "$DESTDIR"/usr/bin; [ -e my ] || ln -sf mythryld my )
 fi
 
-bin/set-heapdump-shebang "$DESTDIR"/usr/bin/mythryld '#!/usr/bin/mythryl-runtime-intel32 --shebang\n'
+bin/set-heapdump-shebang "$DESTDIR"/usr/bin/mythryld '#!/usr/bin/mythryl-runtime-intel32 --shebang
+'
 
-
+if [ -x bin/mythryl-gtk-slave ]; then
+    cp bin/mythryl-gtk-slave "$DESTDIR"/usr/bin/mythryl-gtk-slave
+    chmod 755        "$DESTDIR"/usr/bin/mythryl-gtk-slave
+fi
 
 ####################################################################################
 # Do not edit this or following lines --- they are autobuilt.  (patchname="install")
 # Do not edit this or preceding lines --- they are autobuilt.
 ####################################################################################
-
-
-# Function to install a script.
-#   This takes care of patching the source
-#   of the script with the SHELL and BIN_DIR
-#   variables to use.
-#
-patch_and_install_script() {
-    dsrc=$1
-    ddst=$2
-
-    rm -f "$DESTDIR""/usr/bin"/"$ddst"
-    cat "$SCRIPTS_DIR"/"$dsrc" | \
-    sed -e "s,@SHELL@,$SHELL,g" \
-	-e "s,@BIN_DIR@,/usr/bin," \
-	> "$DESTDIR""/usr/bin"/"$ddst"
-    chmod 555 "$DESTDIR""/usr/bin"/"$ddst"
-    if [ ! -x "$DESTDIR""/usr/bin"/"$ddst" ]; then
-	complain "                         sh/make-c-stuff:   Installation of $DESTDIR/usr/bin/${ddst} failed."
-    fi
-}
 
 patch_and_install_script _build-an-executable-mythryl-heap-image build-an-executable-mythryl-heap-image
 

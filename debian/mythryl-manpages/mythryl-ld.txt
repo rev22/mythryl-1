@@ -1,0 +1,22 @@
+dnl This is structured text -*- stx -*-
+dnl Process this file with: stx2any
+w_title(mythryl-ld)dnl
+w_doc_id(mythryllddman)dnl
+w_section(1)dnl
+w_author(Michele Bini)dnl
+w_man_desc(Mythryl compiler's linking facility)
+
+! DESCRIPTION
+
+''mythryl-ld'' is invoked by
+''build-an-executable-mythryl-heap-image'' to link together .compiled
+and .lib.frozen files to produce an heap image file.
+
+! SEE ALSO
+
+''build-an-executable-mythryl-heap-image'' (1),
+''mythryl-runtime-intel32'' (1)
+
+! AUTHOR
+
+This page was written by w_author.

@@ -43,6 +43,7 @@
 
 #include "heapcleaner-statistics-2.h"
 
+extern char *shebang_line;
 
 FILE* DebugF = NULL;	// Referenced only here and in   src/c/main/error-reporting.c
     //
@@ -367,6 +368,13 @@ static void   process_commandline_options   (
                 if (verbosity__global > 0) {
 		    //
                     printf("             src/c/main/runtime-main.c:   --runtime-compiledfiles-to-load setting compiled_files_to_load_filename to '%s'...\n",compiled_files_to_load_filename);		fflush(stdout);
+                }
+	    } else if (MATCH("shebang-line")) {
+		CHECK("shebang-line");
+		shebang_line = option_arg;
+
+                if (verbosity > 0) {
+                    printf("             src/c/main/runtime-main.c:   --runtime-shebang-line setting shebang_line to '%s'...\n", shebang_line);
                 }
 
 	    } else if (MATCH("heap-image-to-run")) {

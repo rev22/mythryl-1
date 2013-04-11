@@ -1,0 +1,56 @@
+.TH "mythryld" "1" "" "Michele Bini"
+.SH NAME
+mythryld \- Interactive Mythryl session
+.SH SYNOPSIS
+.PP
+\fCmythryld\fP
+.PP
+\fCmythryld\fP [ \fIruntime system args\fP ] [ \fIoptions\fP ] [ \fIfiles\fP ]
+.PP
+\fCmythryld\fP -h
+.SH DESCRIPTION
+.PP
+\fCmythryld\fP, invoked without any argument, starts an interactive
+Mythryl session.
+.PP
+As the user inputs Mythryl statements, they are immediately compiled,
+evaluated, and have their result pretty-printed back to the user.
+.PP
+This makes it useful to quickly execute code, experiment with the
+language, or the compiler functionality.
+.PP
+\fCmythryld\fP may also be invoked by the shorthand command \fCmy\fP.
+.PP
+With options \fC-x\fP, \fC-e\fP and \fC-E\fP, \fCmythryld\fP executes
+arbitrary Mythryl expressions.
+.SH OPTIONS
+.RS 3
+.TP
+\&\fC-E \fIexpression\fP\fP
+Print result of expression.
+.TP
+\&\fC-e \fIexpression\fP\fP
+Print result of expression and quit.
+.TP
+\&\fC-x \fIexpression\fP\fP
+Print result of expression followed by a newline, then quit.
+.TP
+\&\fC-h\fP
+Display more help on the available options.
+.RE
+.SH EXAMPLE
+.RS 3
+.TP
+\&\fCrlwrap mythryld\fP
+Starts mythryld with command line history and editing
+provided by \fCrlwrap\fP (1).  \fCrlwrap\fP is not provided by the
+Mythryl compiler suite but can be installed separately.
+.RE
+.SH SEE ALSO
+.PP
+\fCmythryl\fP (1), \fCbuild-an-executable-mythryl-heap-image\fP (1)
+.SH AUTHOR
+.PP
+This page was written by Michele Bini.
+
+

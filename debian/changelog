@@ -1,0 +1,237 @@
+mythryl (1:6.2.18-1ppamb46) lucid; urgency=low
+
+  * Upstream tarball for Mythryl 6.2.18:
+    mythryl7.110.58-dist-2012-09-11-07.49.53.tar.bz2
+
+ -- Michele Bini <michele.bini@gmail.com>  Fri, 12 Apr 2013 02:22:55 +0200
+
+mythryl (1:6.2.0-1ppamb45) lucid; urgency=low
+
+  * guess-host-architecture-and-os: improve error reporting.
+
+ -- Michele Bini <michele.bini@gmail.com>  Thu, 11 Apr 2013 14:24:38 +0200
+
+mythryl (1:6.2.0-1ppamb44) lucid; urgency=medium
+
+  * Upstream bugfix from release 6.2.1, https://github.com/mythryl/mythryl
+    Fixes executing scripts with command line arguments.
+
+ -- Michele Bini <michele.bini@gmail.com>  Tue, 03 Apr 2012 23:20:46 +0200
+
+mythryl (1:6.2.0-1ppamb43) lucid; urgency=low
+
+  * Updated description and fixed copyright file.
+
+ -- Michele Bini <michele.bini@gmail.com>  Wed, 28 Mar 2012 06:21:11 +0200
+
+mythryl (1:6.2.0-1ppamb42) lucid; urgency=low
+
+  * Upstream release 6.2.0:
+    mythryl7.110.58-dist-2012-03-24-21.20.36.tar.bz2
+  * compile-in-dependency-order-g: Limit number of parallel processes for
+    compilation to number of CPU cores present in the system.
+  * make-compiler-libraries: Disable compilation using parallel processes
+    while bootstrapping the compiler, to allow compilation in low memory
+    system (e.g. 1Gb RAM).
+
+ -- Michele Bini <michele.bini@gmail.com>  Sun, 25 Mar 2012 19:28:36 +0200
+
+mythryl (1:6.1.0-1ppamb41) lucid; urgency=low
+
+  Fix formatting for the mythryld manpage.
+
+ -- Michele Bini <michele.bini@gmail.com>  Sat, 03 Dec 2011 15:00:55 +0100
+
+mythryl (1:6.1.0-1ppamb40) lucid; urgency=low
+
+  * debian/docs: Correct typo.
+
+ -- Michele Bini <michele.bini@gmail.com>  Sat, 03 Dec 2011 13:56:22 +0100
+
+mythryl (1:6.1.0-1ppamb39) lucid; urgency=low
+
+  * Pre-generate manpages using stx2any, relieving compile-time dependency.
+
+ -- Michele Bini <michele.bini@gmail.com>  Sat, 03 Dec 2011 11:55:22 +0100
+
+mythryl (1:6.1.0-1ppamb38) lucid; urgency=low
+
+  * debian/rules: Rules for generating manpages
+  * debian/docs: Add A.PTHREAD-SUPPORT.OVERVIEW
+  * Minor improvements to manpages.
+
+ -- Michele Bini <michele.bini@gmail.com>  Sat, 03 Dec 2011 09:49:11 +0100
+
+mythryl (1:6.1.0-1ppamb36) unstable; urgency=low
+
+  * Upstream release 6.1.0:
+    mythryl7.110.58-dist-2011-11-30-23.31.31.tar.bz2
+
+ -- Michele Bini <michele.bini@gmail.com>  Fri, 02 Dec 2011 06:22:56 +0100
+
+mythryl (1:6.0.0-1ppamb35) lucid; urgency=low
+
+  * mythryl_ld, make-install: Inserting real newline instead of backslash-n, for compatibility with different bin/sh implementations.
+  * Added simple manpages.
+  
+ -- Michele Bini <michele.bini@gmail.com>  Sat, 22 Oct 2011 02:24:18 +0200
+
+mythryl (1:6.0.0-1ppamb33) lucid; urgency=low
+
+  * Added user documentation from the src/ subdirectory.
+
+ -- Michele Bini <michele.bini@gmail.com>  Sat, 15 Oct 2011 23:04:29 +0200
+
+mythryl (1:6.0.0-1ppamb31) lucid; urgency=low
+
+  * Upstream release 6.0.0
+    mythryl7.110.58-dist-2011-10-15-02.45.49.tar.bz2
+
+ -- Michele Bini <michele.bini@gmail.com>  Sat, 15 Oct 2011 18:25:03 +0200
+
+mythryl (1:5.3.0-1ppamb30) karmic; urgency=low
+
+  * Backport for Ubuntu Karmic Koala.
+
+ -- Michele Bini <michele.bini@gmail.com>  Mon, 03 Oct 2011 01:28:52 +0200
+
+mythryl (1:5.3.0-1ppamb29) lucid; urgency=medium
+
+  * Upstream release 5.3.0
+    http://mythryl.org/download/mythryl7.110.58-dist-2011-10-01-06.01.04.tar.bz2
+  * Includes compilation fix.
+
+ -- Michele Bini <michele.bini@gmail.com>  Sun, 02 Oct 2011 17:00:45 +0200
+
+mythryl (1:5.2.0-1ppamb28) lucid; urgency=low
+
+  * Upstream release 5.2.0
+    http://mythryl.org/download/mythryl7.110.58-dist-2011-09-29-20.11.35.tar.bz2
+
+ -- Michele Bini <michele.bini@gmail.com>  Fri, 30 Sep 2011 15:21:13 +0200
+
+mythryl (1:5.0.0-1ppamb27) lucid; urgency=medium
+
+  * sh/_mythryl-ld, src/c/main/runtime-main.c,
+    src/c/cleaner/export-heap-stuff.c: Add --runtime-shebang-line option.
+    Fixes compilation issue.
+
+ -- Michele Bini <michele.bini@gmail.com>  Wed, 21 Sep 2011 21:18:56 +0200
+
+mythryl (1:5.0.0-1ppamb26) lucid; urgency=medium
+
+  * makelib-g.pkg: When setting a different root anchor, such as
+    /usr/lib/mythryl/, build_an_executable_mythryl_heap image would print
+    extra lines in COMPILED_FILES_TO_LOAD; workaround: rebase path for
+    root anchor explicitly and and remove duplicate lines.  Now the
+    'factor' tutorial application compiles and runs correctly
+
+  * debian/rules: Installed in /usr/lib/mythryl/:
+    src/lib/std/standard.lib.frozen, src/lib/core/init/init.cmi.frozen
+
+ -- Michele Bini <michele.bini@gmail.com>  Wed, 21 Sep 2011 17:50:56 +0200
+
+mythryl (1:5.0.0-1ppamb17) lucid; urgency=low
+
+  * _build-an-executable-mythryl-heap-image, makelib-g.pkg: Add parameter
+    to allow configuring root anchor.
+
+  * sh/make-install: Modified to configure root anchor of
+    'build-an-executable-mythryl-heap-image'.
+
+ -- Michele Bini <michele.bini@gmail.com>  Mon, 19 Sep 2011 22:44:24 +0200
+
+mythryl (1:5.0.0-1ppamb15) lucid; urgency=low
+
+  * sh/make-install: Fix for mythryl gtk binary.
+
+ -- Michele Bini <michele.bini@gmail.com>  Mon, 19 Sep 2011 15:27:17 +0200
+
+mythryl (1:5.0.0-1ppamb14) lucid; urgency=low
+
+  * debian/rules: Save and reuse upstream runtime across compilations.
+
+ -- Michele Bini <michele.bini@gmail.com>  Mon, 19 Sep 2011 14:13:34 +0200
+
+mythryl (1:5.0.0-1ppamb13) lucid; urgency=low
+
+  * debian/rules: Add dh_shlibdeps
+  * sh/make-install: Modified to ensure configuration of BIN_DIR variable
+
+ -- Michele Bini <michele.bini@gmail.com>  Sun, 18 Sep 2011 18:57:23 +0200
+
+mythryl (1:5.0.0-1ppamb10) lucid; urgency=low
+
+  * Suggest mythryl-mode.
+
+ -- Michele Bini <michele.bini@gmail.com>  Sun, 18 Sep 2011 14:02:19 +0200
+
+mythryl (1:5.0.0-1ppamb9) lucid; urgency=low
+
+  * Fix typo in package description.
+
+ -- Michele Bini <michele.bini@gmail.com>  Sun, 18 Sep 2011 11:26:18 +0200
+
+mythryl (1:5.0.0-1ppamb8) lucid; urgency=low
+
+  * Add back shlibs:Depends (fix for Depends line)
+  * Fix package description format (line breaks)
+
+ -- Michele Bini <michele.bini@gmail.com>  Sun, 18 Sep 2011 06:16:26 +0200
+
+mythryl (1:5.0.0-1ppamb7) lucid; urgency=low
+
+  * Upstream release 5.0.0:
+    http://mythryl.org/download/mythryl7.110.58-dist-2011-09-17-13.02.52.tar.bz2
+
+ -- Michele Bini <michele.bini@gmail.com>  Sun, 18 Sep 2011 02:23:12 +0200
+
+mythryl (1:4.2.0-1ppamb6) lucid; urgency=low
+
+  * sh/_guess-host-architecture-and-os: Compilation fix for 3.0.* linux
+    kernels, as suggested by 'answer_42' in
+    http://aur.archlinux.org/packages.php?ID=35677
+
+  * Revised package description.
+  * Add back dependency to libgtkglext1-dev, per README.
+
+ -- Michele Bini <michele.bini@gmail.com>  Mon, 12 Sep 2011 23:06:12 +0200
+
+mythryl (1:4.2.0-1ppamb5) lucid; urgency=low
+
+  * Suggested package: readline-editor.
+
+ -- Michele Bini <michele.bini@gmail.com>  Sun, 11 Sep 2011 20:54:02 +0200
+
+mythryl (1:4.2.0-1ppamb4) lucid; urgency=low
+
+  * Changed distribution name to lucid.
+
+ -- Michele Bini <michele.bini@gmail.com>  Thu, 08 Sep 2011 21:26:42 +0200
+
+mythryl (1:4.2.0-1ppamb3) unstable; urgency=low
+
+  * Upstream release 4.2.0:
+    http://mythryl.org/download/mythryl7.110.58-dist-2011-09-06-04.12.17.tar.bz2
+  * Updated description.
+
+ -- Michele Bini <michele.bini@gmail.com>  Thu, 08 Sep 2011 17:00:57 +0200
+    
+mythryl (1:4.0.0-1mb0) unstable; urgency=low
+
+  * Debianization of Mythryl release 4.0.0::
+    http://mythryl.org/download/mythryl7.110.58-dist-2011-08-04-00.23.13.tar.bz2
+
+ -- Michele Bini <michele.bini@gmail.com>  Wed, 24 Aug 2011 23:49:05 +0200
+
+mythryl (7.110.58-1ppamb2) unstable; urgency=low
+
+  * Updated description.
+
+ -- Michele Bini <michele.bini@gmail.com>  Fri, 02 Apr 2010 02:41:33 +0200
+
+mythryl (7.110.58-1ppamb1) unstable; urgency=low
+
+  * Initial release
+
+ -- Michele Bini <michele.bini@gmail.com>  Thu, 21 Jan 2010 03:47:56 +0100

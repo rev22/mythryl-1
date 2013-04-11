@@ -1,0 +1,60 @@
+This package was debianized by Michele Bini <michele.bini@gmail.com> on
+Thu, 21 Jan 2010 03:47:56 +0100.
+
+It was downloaded from <http://www.mythryl.org>
+
+Upstream-contact: Cynbe ru Taren <cynbe@mythryl.org>
+
+Copyright:
+
+    Copyright (c) 2008, 2010, 2011, 2012 Jeff Prothero
+    Copyright (c) 2005 John Reppy (http://www.cs.uchicago.edu/~jhr)
+    Copyright (c) 2003, 2004, 2005, 2006 The Fellowship of SML/NJ
+    Copyright (c) 1998 Bell Laboratories. (Matthias Blume)
+    Copyright (c) 1989, 1990, 1991 by John H. Reppy
+    Copyright (c) 1984, 1989, 1991, 1992, 1993, 1994, 1995, 1996 AT&T Bell Laboratories
+
+    Copyright (c) 2000 Tony Gale
+    Copyright (c) 1998 Cesar Miquel, Shawn T. Amundson, Mattias Gronlund
+    Copyright (c) 2003 by University of Chicago
+    Copyright (c) 1997, 1998, 1999, 2000 YALE FLINT PROJECT
+    Copyright (c) 2000, 2001 by Ken Friis Larsen and Henning Niss
+
+    Copyright (c) 1994-2001, Universit<E4>t Bremen, Germany
+    Copyright (c) 1993 by Carnegie Mellon University
+    Copyright (c) 1993 L. George, F. Guillaume
+    Copyright (c) 1992 Stephen Adams
+    Copyright (c) 1992 Vrije Universiteit, The Netherlands
+    Copyright (c) 1989-2002 Lucent Technologies
+    Copyright (c) 1989-1992 by Andrew W. Appel, James S. Mattson, David R. Tarditi
+    Copyright (c) 1989, 1990, 1991 David R. Tarditi Jr. and Andrew W. Appel
+    Copyright (c) 1989-1992 by Andrew W. Appel
+    Copyright (c) 1989 O'Reilly and Associates, Inc
+    Copyright (c) 1988 by the Massachusetts Institute of Technology
+    Copyright (c) 1987 Digital Equipment Corporation, Maynard, Massachusetts
+    Copyright (c) 1986-91 Radical Eye Software
+    Copyright (c) 1985 Regents of the University of California
+
+    Copyright (c) 1999, 2000, 2001 Lucent Technologies, Bell Laboratories
+    Copyright (c) 1999, 2000, 2002 Bell Labs, Lucent Technologies.
+    Copyright (c) 1999, 2000 by Lucent Bell Laboratories
+    Copyright (c) 1998 Lucent Technologies
+    Copyright (c) 1997 AT&T Labs Research.
+    Copyright (c) 1997, 1998, 2000, 2001, 2002 Bell Labs, Lucent Technologies
+    Copyright (c) 1996 Bell Laboratories, Lucent Technologies
+    Copyright (c) 1996 Bell Laboratories
+    Copyright (c) 1996 AT&T Research
+
+For the Configure script:
+Copyright (c) 1992, 1993, 1994, 1995, 1996, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
+
+License:
+
+    GNU Public Licence version 3
+
+The Debian packaging is:
+
+    Copyright (C) 2010, 2011, 2012 Michele Bini <michele.bini@gmail.com>
+
+and is licensed under the GPL version 3, 
+see `/usr/share/common-licenses/GPL-3'.

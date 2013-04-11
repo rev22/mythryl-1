@@ -69,9 +69,10 @@ usage() {
 }
 
 setup=
+root_anchor= # This is configured by make-install
 
 while [ $# != 0 ] ; do
-    case $1 in
+    case "$1" in
     -D*|-U*|-C*)
 	dulist="$dulist $1"
 	shift
@@ -84,6 +85,15 @@ while [ $# != 0 ] ; do
 	setup=$1
 	shift
 	;;
+    --set-root-anchor)
+	shift
+	if [ $# = 0 ] ; then
+	    usage missing argument for --set-root-anchor
+	fi
+	root_anchor="$1"
+	shift
+	;;
+    --) shift; break ;;
     *)
 	break
 	;;
@@ -147,14 +157,17 @@ echo
 # Unless the heap image exists and is up-to-date, build_an_executable_mythryl_heap_image
 # will write the arguments for mythryl-ld into $linkargsfile.
 #
-echo " _build-an-executable-mythryl-heap-image:   Doing:                  \"$MYTHRYLD\" $dulist --build-an-executable-mythryl-heap-image $setup \"$root\" \"$libfile\" \"$heap\" \"$listfile\" \"$linkargsfile\""
-if "$MYTHRYLD" $dulist --build-an-executable-mythryl-heap-image $setup "$root" "$libfile" "$heap" "$listfile" "$linkargsfile"
-then
-    if [ -r "$linkargsfile" ]; then
-         echo " _build-an-executable-mythryl-heap-image:   Doing:  	              \"$LD7\" \`cat \"$linkargsfile\"\`"
-	"$LD7" `cat "$linkargsfile"`
-        chmod +x "$heap"
-    fi
+
+if [ -z "$root_anchor" ]; then
+    echo " _build-an-executable-mythryl-heap-image:   Doing:                  \"$MYTHRYLD\" $dulist --build-an-executable-mythryl-heap-image $setup \"$root\" \"$libfile\" \"$heap\" \"$listfile\" \"$linkargsfile\""
+    "$MYTHRYLD" $dulist --build-an-executable-mythryl-heap-image $setup "$root" "$libfile" "$heap" "$listfile" "$linkargsfile" || exit $?
 else
-    exit $?
+    echo " _build-an-executable-mythryl-heap-image:   Doing:                  \"$MYTHRYLD\" $dulist --set-root-anchor \"$root_anchor\" --build-an-executable-mythryl-heap-image $setup \"$root\" \"$libfile\" \"$heap\" \"$listfile\" \"$linkargsfile\""
+    "$MYTHRYLD" $dulist --set-root-anchor "$root_anchor" --build-an-executable-mythryl-heap-image $setup "$root" "$libfile" "$heap" "$listfile" "$linkargsfile" || exit $?
+fi
+
+if [ -r "$linkargsfile" ]; then
+    echo " _build-an-executable-mythryl-heap-image:   Doing:  	              \"$LD7\" \`cat \"$linkargsfile\"\`"
+    "$LD7" `cat "$linkargsfile"`
+    chmod +x "$heap"
 fi

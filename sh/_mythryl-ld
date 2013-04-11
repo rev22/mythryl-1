@@ -90,6 +90,8 @@ fi
 #
 RUNTIME="$BIN_DIR/mythryl-runtime-intel32"
 COMPILED_FILES_TO_LOAD=""     # Name of file containing list of .compiled file names
+SHEBANG_LINE="#!""$RUNTIME"" --shebang
+"
 while [ "$#" != "0" ]; do
   arg=$1
   case "$arg"
@@ -107,9 +109,19 @@ while [ "$#" != "0" ]; do
 	 shift
 	 ;;
 
+       --runtime-shebang-line)
+         SHEBANG_LINE="$1"
+         shift
+	 ;;
+
        --runtime-version)
 	 echo "$CMD @VERSION@"
 	 exit 0
+	 ;;
+
+       --)
+         shift
+	 break
 	 ;;
 
        *)
@@ -132,4 +144,4 @@ fi
 
 #
 echo "                          bin/mythryl-ld:   Exec()'ing                              $RUNTIME --runtime-compiledfiles-to-load=$COMPILED_FILES_TO_LOAD $@"
-exec "$RUNTIME" --runtime-compiledfiles-to-load="$COMPILED_FILES_TO_LOAD" "$@"
+exec "$RUNTIME" --runtime-shebang-line="$SHEBANG_LINE" --runtime-compiledfiles-to-load="$COMPILED_FILES_TO_LOAD" "$@"
