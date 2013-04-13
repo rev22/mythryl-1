@@ -53,9 +53,5 @@ else
     fi
 fi
 
-"$mythryld" -Ccompiler::compile_in_subprocesses=FALSE src/lib/core/mythryl-compiler-compiler/mythryl-compiler-compiler-for-this-platform.lib  <<EOF
-    mythryl_compiler_compiler_for_this_platform::make_mythryl_compiler ();
-EOF
-
-exit 0
+exec "$mythryld" -Ccompiler::compile_in_subprocesses=FALSE src/lib/core/mythryl-compiler-compiler/mythryl-compiler-compiler-for-this-platform.lib  -e "mythryl_compiler_compiler_for_this_platform::make_mythryl_compiler ();"
 
