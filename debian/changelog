@@ -1,3 +1,9 @@
+mythryl (1:7.1.0-1ppamb48) lucid; urgency=low
+
+  * New upstream release
+
+ -- Michele Bini <michele.bini@gmail.com>  Sun, 14 Apr 2013 17:30:02 +0200
+
 mythryl (1:6.2.18-1ppamb46) lucid; urgency=low
 
   * Upstream tarball for Mythryl 6.2.18:
