@@ -17,7 +17,6 @@ configure: configure-stamp
 configure-stamp:
 	dh_testdir
 	# Add here commands to configure the package.
-
 	touch configure-stamp
 
 
@@ -30,7 +29,10 @@ build-stamp: configure-stamp
 	[ -d bin.upstream ] || ([ -d bin ] && mv bin bin.upstream)
 	[ -d bin ] || mkdir bin
 	cp -av bin.upstream/* bin/
+	[ "!" -e bin/mythryld-bootstrap ] || mv bin/mythryld-bootstrap bin/mythryld
 	# Add here commands to compile the package.
+	sleep 2
+	touch src/c/Configure # trigger reconfiguration
 	$(MAKE) compiler
 	#docbook-to-man debian/mythryl.sgml > mythryl.1
 
