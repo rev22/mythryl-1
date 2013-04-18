@@ -6,8 +6,10 @@ It was downloaded from <http://www.mythryl.org>
 Upstream-contact: Cynbe ru Taren <cynbe@mythryl.org>
 
 Copyright:
+    Copyright 1989 by Bell Laboratories
 
-    Copyright (c) 2008, 2010, 2011, 2012 Jeff Prothero
+    Copyright notices extracted from the source code:
+    Copyright (c) 2008, 2010, 2011, 2012, 2013 Jeff Prothero
     Copyright (c) 2005 John Reppy (http://www.cs.uchicago.edu/~jhr)
     Copyright (c) 2003, 2004, 2005, 2006 The Fellowship of SML/NJ
     Copyright (c) 1998 Bell Laboratories. (Matthias Blume)
@@ -50,11 +52,30 @@ Copyright (c) 1992, 1993, 1994, 1995, 1996, 1998, 1999, 2000, 2001, 2002, 2003, 
 
 License:
 
-    GNU Public Licence version 3
+STANDARD ML OF NEW JERSEY COPYRIGHT NOTICE, LICENSE AND DISCLAIMER.
+
+
+Permission to use, copy, modify, and distribute this software and its
+documentation for any purpose and without fee is hereby granted,
+provided that the above copyright notice appear in all copies and that
+both the copyright notice and this permission notice and warranty
+disclaimer appear in supporting documentation, and that the name of
+AT&T Bell Laboratories or any AT&T entity not be used in advertising
+or publicity pertaining to distribution of the software without
+specific, written prior permission.
+
+AT&T disclaims all warranties with regard to this software, including
+all implied warranties of merchantability and fitness.  In no event
+shall AT&T be liable for any special, indirect or consequential
+damages or any damages whatsoever resulting from loss of use, data or
+profits, whether in an action of contract, negligence or other
+tortious action, arising out of or in connection with the use or
+performance of this software.
 
 The Debian packaging is:
 
-    Copyright (C) 2010, 2011, 2012 Michele Bini <michele.bini@gmail.com>
+    Copyright (C) 2010, 2011, 2012, 2013 Michele Bini <michele.bini@gmail.com>
 
-and is licensed under the GPL version 3, 
-see `/usr/share/common-licenses/GPL-3'.
+and is dual-licensed:
+* under the same terms as Mythryl described in this file
+* under the GPL version 3 (see `/usr/share/common-licenses/GPL-3')

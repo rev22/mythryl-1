@@ -1,3 +1,9 @@
+mythryl (1:7.1.0-1ppamb49) unstable; urgency=low
+
+  * debian/copyright: Updated copyright and licensing terms.
+
+ -- Michele Bini <michele.bini@gmail.com>  Fri, 19 Apr 2013 13:45:23 +0200
+
 mythryl (1:7.1.0-1ppamb48) lucid; urgency=low
 
   * New upstream release
