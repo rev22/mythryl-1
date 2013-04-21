@@ -1,3 +1,9 @@
+mythryl (1:7.1.0-1ppamb51) lucid; urgency=low
+
+  * Add build dependency on libgl1-mesa-dev (| libgl-dev).
+
+ -- Michele Bini <michele.bini@gmail.com>  Sun, 21 Apr 2013 18:30:01 +0200
+
 mythryl (1:7.1.0-1ppamb50) unstable; urgency=low
 
   * src/c/o/Makefile.in, src/c/o/Makefile.intel32-linux: Remove -Werror to
